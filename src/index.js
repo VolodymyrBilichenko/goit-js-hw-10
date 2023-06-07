@@ -17,9 +17,10 @@ const refs = {
     loadingData: document.querySelector('.loader'),
     errorMes: document.querySelector('.error'),
     infoCat: document.querySelector('.cat-info'),
+    selectSsMain: document.querySelector('.ss-main'),
 };
+refs.selectSsMain.classList.add('is-hidden');
 refs.loadingData.style.display = 'none';
-refs.errorMes.style.display = 'none';
 refs.selectInp.addEventListener('change', onChangeCat);
 
 let isFirstLoad = true;
@@ -98,6 +99,8 @@ function textLoading() {
 
 function closeTextLoading() {
     refs.loadingData.style.display = 'none';
+    refs.selectInp.classList.remove('hidden');
+    refs.selectSsMain.classList.remove('is-hidden');
 }
 
 function errorMessage() {
@@ -105,6 +108,6 @@ function errorMessage() {
     Notiflix.Notify.failure(`${txtErrMes}`); // виводить помилку з сервера
 }
 
-function resetCatCard() {
+function resetCatCard() { // для очистки та відновлення карток з котами
     refs.infoCat.innerHTML = '';
 }
