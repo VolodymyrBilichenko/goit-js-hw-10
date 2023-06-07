@@ -1,6 +1,7 @@
 import { fetchBreeds, fetchCatByBreed } from "./js/cat-api";
 import './sass/index.scss';
 import Notiflix from 'notiflix';
+import SlimSelect from 'slim-select';
 
 const refs = {
     selectInp: document.querySelector('.breed-select'),
