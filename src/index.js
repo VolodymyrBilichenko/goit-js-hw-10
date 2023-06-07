@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
 
-let SlimSelectData = []; 
+let SlimSelectData = [];
 
 const slimSelInp = new SlimSelect({
     select: '.breed-select',
@@ -56,9 +56,9 @@ function onChangeCat() { // фун-я для вибору кота з серве
         isFirstLoad = false;
         return;
     }
-
     const breedId = this.value;
     
+    resetCatCard();
     textLoading();
     fetchCatByBreed(breedId)
         .then((servOneCat) => {
@@ -69,6 +69,7 @@ function onChangeCat() { // фун-я для вибору кота з серве
         .catch((error) => {
             closeTextLoading();
             errorMessage();
+            resetCatCard();
             console.error('error fetching breeds: ', error);
             throw error; // throw !!! почитать
         })
@@ -102,4 +103,8 @@ function closeTextLoading() {
 function errorMessage() {
     const txtErrMes = refs.errorMes.textContent;
     Notiflix.Notify.failure(`${txtErrMes}`); // виводить помилку з сервера
+}
+
+function resetCatCard() {
+    refs.infoCat.innerHTML = '';
 }
