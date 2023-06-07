@@ -13,9 +13,13 @@ body {
     text-align: center;
     border-radius: 5px;
     overflow: hidden;
-    margin: 5em auto;
+    // margin: 5em auto;
     width: 100%;
     max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
 }
 
 
@@ -23,13 +27,14 @@ body {
 /* 	Product details  */
 .product-details {
     position: relative;
-    text-align: left;
     overflow: hidden;
-    padding: 30px;
-    height: 100%;
-    float: left;
-    width: 40%;
+    width: 100%;
+    margin-right: 30px;
+}
 
+.cat-info{
+    display: flex;
+    justify-content: center;
 }
 
 /* 	Product Name */
