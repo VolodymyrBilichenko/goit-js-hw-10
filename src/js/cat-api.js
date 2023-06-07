@@ -9,7 +9,7 @@ const options = {
 };
 
 function fetchBreeds() { // виконує HTTP-запит і повертає проміс із масивом порід
-    const url = `https://api.thecatapi.com/v1/breeds?limit=10`; // даю ключ до сервера  
+    const url = `https://api.thecatapi.com/v1/breeds`; // даю ключ до сервера  
     return fetch(url, options) // повертає запит 
     .then((response) => { // повернення промісу (перший запит на сервер)
         if (!response.ok) {
