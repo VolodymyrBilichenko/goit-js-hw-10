@@ -2,6 +2,15 @@ import { fetchBreeds, fetchCatByBreed } from "./js/cat-api";
 import './sass/index.scss';
 import Notiflix from 'notiflix';
 import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
+
+let SlimSelectData = []; 
+
+const slimSelInp = new SlimSelect({
+    select: '.breed-select',
+    data: SlimSelectData,
+});
+
 
 const refs = {
     selectInp: document.querySelector('.breed-select'),
@@ -11,7 +20,9 @@ const refs = {
 };
 refs.loadingData.style.display = 'none';
 refs.errorMes.style.display = 'none';
-refs.selectInp.addEventListener('change', onChangeCat)
+refs.selectInp.addEventListener('change', onChangeCat);
+
+let isFirstLoad = true;
 
 textLoading();
 fetchBreeds()
@@ -33,10 +44,19 @@ function serverInfCats(serverInf) { // фун-я для перебору об'є
         servCats.value = el.id;
         servCats.textContent = el.name;
         refs.selectInp.append(servCats);
+
+        SlimSelectData.push({text: el.name, value: el.id});
     });
+    slimSelInp.setData(SlimSelectData);
 }
 
+
 function onChangeCat() { // фун-я для вибору кота з сервера по параметрам (запуска'ється за допомогою fetchCatByBreed())
+    if (isFirstLoad) { 
+        isFirstLoad = false;
+        return;
+    }
+
     const breedId = this.value;
     
     textLoading();
