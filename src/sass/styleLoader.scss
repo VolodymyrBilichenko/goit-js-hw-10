@@ -1,5 +1,4 @@
 .loader {
-    display: block; // delete position
     position: absolute;
     width: 100px;
     height: 100px;
@@ -18,7 +17,7 @@
     top: 50%;
     left: 0;
     transform: translate(-5px, -50%);
-    background: linear-gradient(to right, #fff 50%, #db64e6 50%) no-repeat;
+    background: linear-gradient(to right, #fff 50%, #006158 50%) no-repeat;
     background-size: 200% auto;
     background-position: 100% 0;
     animation: colorBallMoveX 1.5s linear infinite alternate;
@@ -32,7 +31,7 @@
     transform: translateX(-50%);
     width: 2px;
     height: 100%;
-    background: #db64e6;
+    background: #006158;
 }
 
 @keyframes colorBallMoveX {
@@ -65,4 +64,9 @@
     position: absolute;
     margin-left: -44px;
     margin-top: 101px;
+    color: #006158;
+}
+
+.loader-txt_color{
+    color: #fff;
 }

@@ -15,7 +15,7 @@ body {
     overflow: hidden;
     // margin: 5em auto;
     width: 100%;
-    max-width: 700px;
+    max-width: 840px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,6 +35,10 @@ body {
 .cat-info{
     display: flex;
     justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* 	Product Name */
@@ -42,7 +46,7 @@ body {
     font-family: 'Old Standard TT', serif;
     display: inline-block;
     position: relative;
-    font-size: 34px;
+    font-size: 39px;
     color: #344055;
     margin: 0;
 
@@ -54,7 +58,7 @@ body {
 #container .product-details>p {
     font-family: 'Farsan', cursive;
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
     color: #7d7d7d;
 
 }
