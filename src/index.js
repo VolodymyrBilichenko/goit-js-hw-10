@@ -32,6 +32,7 @@ fetchBreeds()
         serverInfCats(serverInf); // посилання на фун-ю яка робить перебор обьєкта з сервера
     })
     .catch((error) => {
+        refs.selectInp.classList.add('is-hidden');
         closeTextLoading();
         errorMessage(); // виводить помилку з сервера
         console.error('error fetching breeds: ', error);
